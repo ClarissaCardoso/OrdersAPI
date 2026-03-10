@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CrudOrders/CrudOrders.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
