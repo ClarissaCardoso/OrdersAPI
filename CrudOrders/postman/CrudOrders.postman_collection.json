@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"numeroPedido\": \"1002\",\r\n  \"dataCriacao\": \"2024-01-01\",\r\n  \"valorTotal\": 200.50,\r\n  \"items\": [\r\n    {\r\n      \"idItem\": 1,\r\n      \"quantidadeItem\": 2,\r\n      \"valorItem\": 50\r\n    },\r\n    {\r\n      \"idItem\": 2,\r\n      \"quantidadeItem\": 1,\r\n      \"valorItem\": 100.5\r\n    }\r\n  ]\r\n}",
+					"raw": "{\r\n  \"numeroPedido\": \"1004\",\r\n  \"dataCriacao\": \"2024-01-01\",\r\n  \"valorTotal\": 200.50,\r\n  \"items\": [\r\n    {\r\n      \"idItem\": 1,\r\n      \"quantidadeItem\": 2,\r\n      \"valorItem\": 50\r\n    },\r\n    {\r\n      \"idItem\": 2,\r\n      \"quantidadeItem\": 1,\r\n      \"valorItem\": 100.5\r\n    }\r\n  ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -37,10 +37,20 @@
 		{
 			"name": "Buscar",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzczMTA5MzEzLCJleHAiOjE3NzMxMTI5MTN9.4bMIACXFRpRf9JxLbjhBv1sJUwP7C9agh5BjIVNVbCM",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/order/1001",
+					"raw": "http://localhost:3000/order/1004",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -48,7 +58,7 @@
 					"port": "3000",
 					"path": [
 						"order",
-						"1001"
+						"1004"
 					]
 				}
 			},
@@ -57,6 +67,16 @@
 		{
 			"name": "Listar",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzczMTA5MzEzLCJleHAiOjE3NzMxMTI5MTN9.4bMIACXFRpRf9JxLbjhBv1sJUwP7C9agh5BjIVNVbCM",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -77,16 +97,97 @@
 		{
 			"name": "Atualizar",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzczMTA5MzEzLCJleHAiOjE3NzMxMTI5MTN9.4bMIACXFRpRf9JxLbjhBv1sJUwP7C9agh5BjIVNVbCM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dataCriacao\": \"2024-01-02\",\r\n  \"valorTotal\": 300,\r\n  \"items\": [\r\n    {\r\n      \"idItem\": 5,\r\n      \"quantidadeItem\": 1,\r\n      \"valorItem\": 300\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order/1004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"1004"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Deletar",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzczMTA5MzEzLCJleHAiOjE3NzMxMTI5MTN9.4bMIACXFRpRf9JxLbjhBv1sJUwP7C9agh5BjIVNVbCM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/order/1002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"1002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "01-Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
 			},
 			"response": []
 		}
